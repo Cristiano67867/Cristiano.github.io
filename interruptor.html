@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <style>
+      body{
+        background: #262927;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+      }
+      
+      .trilho{
+        height: 200px;
+        width: 280px;
+        background: #333;
+        border-radius: 130px;
+        position: relative;
+        transition: .5s;
+      }
+      
+      .trilho .indicador{
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        transform: scale(.9);
+        background: black;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        transition: .45s;
+    
+      }
+      h1::after{
+        content: "Modo dark";
+        color: white;
+        transition: .95s;
+      }
+      
+      h1{
+        color: white;
+      }
+    
+      .trilho.dark{
+        background: #d9d9d9;
+        transition: .5s;
+      }
+      
+      .trilho .indicador.dark{
+        left: 120px;
+        background: #fff;
+      }
+      
+      body.dark{
+        background: #fff;
+        transition: .5s;
+      }
+      
+      body.dark h1::after{
+        content: "Modo claro";
+        color: black;
+        text-align: center;
+        transition: .5s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>  </h1>
+    <div class="trilho">
+      <div class="indicador"></div>
+    </div>
+    <script>
+      const trilho = document.querySelector(".indicador");
+      const body = document.querySelector("body");
+      
+      trilho.addEventListener("click" ,() =>{
+        
+        trilho.classList.toggle("dark");
+        body.classList.toggle('dark');
+      })
+      
+    
+    </script>
+  </body>
+</html>
